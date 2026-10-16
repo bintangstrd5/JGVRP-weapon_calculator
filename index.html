@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090d12">
+    <title>JGVRP | Weapon Calculator</title>
+    <link rel="stylesheet" href="css/inline_styles.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8.5h16M7 5.5h10M6 8.5l1.2 10h9.6L18 8.5M9 12v3m6-3v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="brand-copy"><span class="eyebrow"><span class="status-dot"></span> JGVRP • BUSINESS TOOLS</span><h1>Weapon <span>Calculator</span></h1><p class="subtitle">Underground market · Production & profit estimator</p></div>
+            <div class="header-tag"><span class="tag-dot"></span> SYSTEM ONLINE</div>
+        </header>
+
+        <section class="intro-row">
+            <div><p class="section-kicker">01 / CONFIGURATION</p><h2>Atur produksi senjata</h2><p class="section-description">Pilih senjata dan tentukan jumlah peluru untuk menghitung total modal produksi.</p></div>
+            <div class="slot-counter"><strong>03</strong><span>WEAPON SLOTS</span></div>
+        </section>
+
+        <form id="calculator-form">
+            <section class="weapon-grid" aria-label="Slot senjata">
+                <article class="weapon-card"><div class="card-heading"><span class="slot-number">01</span><span class="card-title">Weapon slot 1</span><span class="card-icon">↗</span></div><label for="weapon-1">Pilih senjata</label><select id="weapon-1" class="weapon-select"><option value="">-- Pilih senjata --</option></select><label for="ammo-1">Jumlah peluru <span class="label-unit">AMMO</span></label><div class="input-wrap"><input id="ammo-1" type="number" value="0" min="0" step="1"><span class="input-suffix">PCS</span></div></article>
+                <article class="weapon-card"><div class="card-heading"><span class="slot-number">02</span><span class="card-title">Weapon slot 2</span><span class="card-icon">↗</span></div><label for="weapon-2">Pilih senjata</label><select id="weapon-2" class="weapon-select"><option value="">-- Pilih senjata --</option></select><label for="ammo-2">Jumlah peluru <span class="label-unit">AMMO</span></label><div class="input-wrap"><input id="ammo-2" type="number" value="0" min="0" step="1"><span class="input-suffix">PCS</span></div></article>
+                <article class="weapon-card"><div class="card-heading"><span class="slot-number">03</span><span class="card-title">Weapon slot 3</span><span class="card-icon">↗</span></div><label for="weapon-3">Pilih senjata</label><select id="weapon-3" class="weapon-select"><option value="">-- Pilih senjata --</option></select><label for="ammo-3">Jumlah peluru <span class="label-unit">AMMO</span></label><div class="input-wrap"><input id="ammo-3" type="number" value="0" min="0" step="1"><span class="input-suffix">PCS</span></div></article>
+            </section>
+
+            <section class="selling-box"><div class="selling-icon" aria-hidden="true">$</div><div class="selling-content"><label for="selling-price" class="selling-label">Total harga jual</label><p class="selling-description">Isi jika ingin melihat estimasi keuntungan dan margin.</p><div class="price-input"><span>$</span><input id="selling-price" type="number" min="0" step="0.01" placeholder="0.00"></div></div><div class="selling-side"><span class="mini-label">OPTIONAL</span><span class="mini-value">PROFIT CHECK</span></div></section>
+
+            <button type="submit"><span>Hitung biaya produksi</span><span class="button-arrow">→</span></button>
+        </form>
+
+        <section id="result" class="result-card" aria-live="polite" hidden>
+            <div class="result-heading"><div><p class="section-kicker">02 / REPORT</p><div class="section-title">Rincian modal produksi</div></div><span class="report-chip"><span class="status-dot"></span> CALCULATION RESULT</span></div>
+            <div id="breakdown"></div>
+            <div class="total-row"><div><span class="total-caption">TOTAL MODAL PRODUKSI</span><span class="total-note">Estimasi biaya seluruh slot terpilih</span></div><strong id="total-cost" class="badge-modal">$0.00</strong></div>
+            <div id="profit-box" class="profit-box" hidden><div><div class="profit-label">Estimasi profit bersih</div><strong id="profit" class="badge-profit"></strong><div id="margin" class="margin"></div></div><span class="profit-symbol">↗</span></div>
+            <div id="check-only" class="check-only" hidden><span class="info-icon">i</span><span><strong>Mode cek modal aktif</strong><small>Tambahkan harga jual di atas untuk menghitung profit.</small></span></div>
+        </section>
+        <footer><span class="footer-brand"><span class="footer-dot"></span> JGVRP TOOLKIT</span><span>Perhitungan lokal · Tidak memerlukan API atau database</span></footer>
+    </main>
+    <script src="js/calculator.js"></script>
+</body>
+</html>
